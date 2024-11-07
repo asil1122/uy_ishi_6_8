@@ -3,7 +3,8 @@ import { MainLayout } from "./layout/main-layout";
 import { Register } from "./pages/register";
 import { Login } from "./pages/login";
 import { Products } from "./pages/products";
-import { Phone } from "./pages/phone";
+import { PhoneItem } from "./pages/phone";
+import { Computer } from "./pages/computer";
 
 function App() {
 
@@ -13,7 +14,8 @@ function App() {
       <Route path="/" element={<Login/>}/>
         <Route path="/app" element={<MainLayout/>}>
           <Route index element={<Products/>}/>
-          <Route path="app/phones" element = {<Phone/>}/>
+          <Route path="/app/phones" element = {<PhoneItem/>}/>
+          <Route path="/app/computer" element = {<Computer/>}/>
         </Route>
     </Routes>  
   </>;

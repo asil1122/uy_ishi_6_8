@@ -11,6 +11,7 @@ export const store = configureStore({
   },
   preloadedState: {
     user: loadState("user"),
+    product: loadState("product"),
   },
 
   middleware: (defaultMiddlware) =>
@@ -19,4 +20,5 @@ export const store = configureStore({
 
 store.subscribe(() => {
   saveState("user", store.getState().user);
+  saveState("product", store.getState().product);
 });

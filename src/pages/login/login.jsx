@@ -19,7 +19,7 @@ export const Login = () => {
         loginMutationFn(data).unwrap().then((res) => {
             dispatch(createUser(res));
             reset()            
-            navigate('/app', { replace: true });
+            navigate('/app');
         })
       };
   return (

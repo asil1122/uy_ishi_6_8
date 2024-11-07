@@ -4,8 +4,12 @@ import { loadState } from "./storege";
 export const createBaseQuery = () => {
   return fetchBaseQuery({
     baseUrl: "http://localhost:3000",
-    headers: {
-      Authorization: `Bearer ${loadState("user")?.accessToken}`,
+    prepareHeaders: (headers) => {
+      const token = loadState("user")?.accessToken;
+      if (token) {
+        headers.set("Authorization", `Bearer ${token}`);
+      }
+      return headers;
     },
   });
 };
